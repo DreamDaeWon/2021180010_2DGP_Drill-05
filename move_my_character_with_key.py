@@ -1,4 +1,3 @@
-
 from pico2d import *
 
 open_canvas()
@@ -23,8 +22,42 @@ runnmm_w = [34,31,25,26,36]
 runnmm_h = [43,47,52,52,45]
 
 
+x = 800//2
+
+dirRL = 0
+dirUD = 0
 
 def key_event():
+    global running
+    global dirRL
+    global dirUD
+    global x
+    events = get_events()
+
+    for event in events:
+        if event.type == SDL_KEYDOWN:
+
+            if event.type == SDL_QUIT:
+                running = False
+            elif event.type == SDLK_RIGHT:
+                pass
+            elif event.type == SDLK_LEFT:
+                pass
+            elif event.type == SDLK_UP:
+                pass
+            elif event.type == SDLK_DOWN:
+                pass
+
+        if event.type == SDL_KEYUP:
+            if event.type == SDLK_RIGHT:
+                pass
+            elif event.type == SDLK_LEFT:
+                pass
+            elif event.type == SDLK_UP:
+                pass
+            elif event.type == SDLK_DOWN:
+                pass
+
 
     pass
 
@@ -33,12 +66,14 @@ def CharaterDraw():
     pass
 
 
+running = True
+
 
 for x in range(0,800,5):
     clear_canvas()
     ground.draw(640,512)
     CharaterDraw()
-    
+
     key_event()
 
 
