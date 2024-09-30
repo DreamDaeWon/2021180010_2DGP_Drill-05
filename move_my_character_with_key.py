@@ -28,13 +28,17 @@ def key_event():
 
     pass
 
+def CharaterDraw():
+
+    pass
+
 
 
 for x in range(0,800,5):
     clear_canvas()
     ground.draw(640,512)
-    characteridle.draw(x,90)
-
+    CharaterDraw()
+    
     key_event()
 
 
