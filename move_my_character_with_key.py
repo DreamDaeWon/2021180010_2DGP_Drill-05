@@ -91,6 +91,26 @@ def CharaterDraw():
             characterrun.clip_composite_draw(runnmm_x[frame], 62-runnmm_y[frame], runnmm_w[frame], runnmm_h[frame],0,'h', x, y,runnmm_w[frame]*3,runnmm_h[frame]*3)
         pass
 
+def PlayerControl():
+    global x
+    global y
+    if x <= 750 and x >= 50:
+        x += dirRL * 10
+    elif x>750:
+        x = 750
+    elif x<50:
+        x = 50
+
+
+    if y <= 550 and y >= 50:
+        y += dirUD * 10
+    elif y<50:
+        y = 50
+    elif y>550:
+        y = 550
+
+    pass
+
 
 running = True
 frame = 0
@@ -108,21 +128,8 @@ while running:
     CharaterDraw()
     update_canvas()
     key_event()
-    frame = (frame + 1) % 8
-    if x <= 750 and x >= 50:
-        x += dirRL * 10
-    elif x>750:
-        x = 750
-    elif x<50:
-        x = 50
+    PlayerControl()
 
-
-    if y <= 550 and y >= 50:
-        y += dirUD * 10
-    elif y<50:
-        y = 50
-    elif y>550:
-        y = 550
     delay(0.05)
 
 close_canvas()
